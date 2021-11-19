@@ -1120,21 +1120,21 @@ sub tvdb_title {
 	if (!$filetitle) {
 		$filetitle = $pureshowname;
 	}
-	if($tvdbrename eq "TRUE") {
-		my $id_sub = substitute_tvdb_id($filetitle);
-		if($id_sub =~ /^[+-]?\d+$/) {
-			my $newname = $tvdb->getSeriesName($id_sub);
-			if($newname) {
-				return $newname;
-			}
-		}
-		my $retval;
-		$retval = $tvdb->getSeries($filetitle);
-		# if it finds one return it
-		if(defined($retval)) {
-			return $retval->{'SeriesName'};
-		}		
-	}
+#	if($tvdbrename eq "TRUE") {
+#		my $id_sub = substitute_tvdb_id($filetitle);
+#		if($id_sub =~ /^[+-]?\d+$/) {
+#			my $newname = $tvdb->getSeriesName($id_sub);
+#			if($newname) {
+#				return $newname;
+#			}
+#		}
+#		my $retval;
+#		$retval = $tvdb->getSeries($filetitle);
+#		# if it finds one return it
+#		if(defined($retval)) {
+#			return $retval->{'SeriesName'};
+#		}		
+#	}
 	return $filetitle;
 }
 
