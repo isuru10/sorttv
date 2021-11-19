@@ -57,7 +57,7 @@ Install the modules the script uses.
 To do so, run this command on Linux:
 sudo cpan File::Copy::Recursive File::Glob LWP::Simple TVDB::API Text::Capitalize
 
-on RaspberryPi 4 please run this comman also:
+on RaspberryPi 4 please run this command also:
 sudo perl -MCPAN -e 'install Bundle::LWP'
 
 On Windows run the same command, without "sudo"
