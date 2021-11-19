@@ -41,7 +41,7 @@ use File::Glob ':glob';
 use LWP::Simple;
 use File::Spec::Functions "rel2abs";
 use File::Basename;
-use TVDB::API;
+# use TVDB::API;
 use File::Find;
 use File::Path "make_path";
 use FileHandle;
@@ -89,19 +89,19 @@ if(!defined($sortdir) || !defined($tvdir)) {
 if($renameformat =~ /\[EP_NAME\d]/i || $fetchimages ne "FALSE" 
   || $lookupseasonep ne "FALSE" || $lookupseasonep ne "FALSE") {
 	my $TVDBAPIKEY = "FDDBDB916D936956";
-	$tvdb = TVDB::API::new($TVDBAPIKEY);
+#	$tvdb = TVDB::API::new($TVDBAPIKEY);
 
-	$tvdb->setLang($tvdblanguage);
-	my $hashref = $tvdb->getAvailableMirrors();
-	$tvdb->setMirrors($hashref);
-	$tvdb->chooseMirrors();
+#	$tvdb->setLang($tvdblanguage);
+#	my $hashref = $tvdb->getAvailableMirrors();
+#	$tvdb->setMirrors($hashref);
+#	$tvdb->chooseMirrors();
 	unless (-e "$scriptpath/.cache" || mkdir "$scriptpath/.cache") {
 		out("warn", "WARN: Could not create cache dir: $scriptpath/cache $!\n");
 		exit;
 	}
-	$tvdb->setCacheDB("$scriptpath/.cache/.tvdb.db");
-	$tvdb->setUserAgent("SortTV");
-	$tvdb->setBannerPath("$scriptpath/.cache/");
+#	$tvdb->setCacheDB("$scriptpath/.cache/.tvdb.db");
+#	$tvdb->setUserAgent("SortTV");
+#	$tvdb->setBannerPath("$scriptpath/.cache/");
 }
 
 $log = FileHandle->new("$logfile", "a") or out("warn", "WARN: Could not open log file $logfile: $!\n") if $logfile;
