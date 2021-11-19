@@ -1,0 +1,1 @@
+sudo nice perl /home/pi/sorttv/sorttv.pl >> sort_after_done.log
